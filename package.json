@@ -1,0 +1,17 @@
+{
+  "name": "ExpressCodeSchool",
+  "description": "Following Codeschool",
+  "version": "0.0.1",
+  "author": {
+    "name": "Max Struever",
+    "email": "max@madmaxlax.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/expressjs/express.git"
+  },
+  "dependencies": {
+    "express": "^4.14.1"
+  }
+}

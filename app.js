@@ -1,16 +1,18 @@
 var express = require('express');
 var app = express();
+var logger = require('./logger');
+
+
+app.use(logger);
 
 console.log('starting');
-app.get('/', function (req, response) {
-    response.send('Hello World'); //same as response.write() and response.end() which are node functions
-});
+// app.get('/', function (req, response) {
+//     response.sendFile(__dirname + '/public/index.html');
+// });
+app.use(express.static('public'));
+
 app.get('/blocks', function (req, response) {
-    response.redirect(301, '/parts');//301 says that redirect is permanent, rather than default 302 which is status code for temporary
-});
-app.get('/parts', function (req, response) {
-    var blocks = ['Fixed', 'movable', 'rotating'];
-    //response.send(blocks);
+    var blocks = ['Fixed','movable','Rotating'];
     response.json(blocks);
 });
 
